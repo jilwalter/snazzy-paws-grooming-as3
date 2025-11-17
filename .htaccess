@@ -1,0 +1,7 @@
+# Protect roster.html using basic authentication
+<Files "roster.html">
+  AuthType Basic
+  AuthName "Snazzy Paws Staff Area"
+  AuthUserFile /home/exampleuser/.htpasswd
+  Require valid-user
+</Files>
