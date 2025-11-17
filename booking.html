@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Required for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Description for this specific page -->
+  <meta name="description" content="Request a dog grooming appointment at Snazzy Paws Grooming in Hamilton using our simple online booking form.">
+
+  <title>Snazzy Paws Grooming • Booking</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Existing stylesheet from Assessment 2 -->
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+
+  <!-- 
+    File: booking.html
+    Project: Snazzy Paws Grooming
+    Student Name: Jil Walter
+    Student ID: 5133764
+    Assessment: BIT607 Web Development - Assessment 2
+    Description: Booking page with a simple appointment request form.
+    Notes: Header updated to match layout and styling across all pages.
+  -->
+
+  <style>
+    /* ===== Warm theme variables (shared site-wide) ===== */
+    :root{
+      --accent:#c49b66;
+      --accent-700:#8b6b3f;
+      --bg-cream:#faf8f4;
+      --panel:#f5eee3;
+      --ink:#3a3024;
+      --muted:#5c4e3c;
+      --line:#e6dfd2;
+    }
+
+    body{
+      color:var(--ink);
+      background:var(--bg-cream);
+      font-family:Arial,sans-serif;
+      margin:0;
+      padding:0;
+    }
+
+    /* Custom page-width container for header only */
+    .page-container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1rem;
+    }
+
+    /* ===== HEADER (consistent across entire site) ===== */
+    header{
+      width:100%;
+      background:linear-gradient(90deg,#8b6b3f 0%,#c49b66 100%);
+      color:#fff;
+      border-bottom:3px solid #8b6b3f;
+      box-shadow:0 2px 6px rgba(0,0,0,.1);
+    }
+
+    header .page-container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:1rem 0;
+    }
+
+    header h1{
+      margin:0;
+      color:#fff;
+      font-size:1.6rem;
+      letter-spacing:.5px;
+    }
+
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      padding:.45rem .7rem;
+      border-radius:.4rem;
+      font-weight:500;
+    }
+
+    nav a:hover,
+    nav a:focus-visible{
+      background:rgba(255,255,255,.2);
+    }
+
+    nav a[aria-current="page"]{
+      background:rgba(255,255,255,.25);
+      font-weight:700;
+      border-bottom:2px solid #fff;
+    }
+
+    /* ===== Booking form styles ===== */
+    .lead, .help{color:var(--muted);font-size:1.05rem;line-height:1.6;}
+
+    form{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:1rem;
+      margin:1rem 0 2rem;
+    }
+
+    label{
+      display:block;
+      margin:.6rem 0 .25rem;
+      color:var(--muted);
+    }
+
+    input,select,textarea{
+      width:100%;
+      max-width:720px;
+      padding:.65rem .75rem;
+      border:1px solid var(--line);
+      border-radius:.5rem;
+      background:#fff;
+      color:var(--ink);
+      font-size:1rem;
+    }
+
+    input:focus,select:focus,textarea:focus{
+      outline:2px solid var(--accent);
+      outline-offset:2px;
+      border-color:var(--accent);
+    }
+
+    .btn-submit{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      padding:.7rem 1rem;
+      border-radius:.7rem;
+      font-weight:700;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn-submit:hover,
+    .btn-submit:focus-visible{
+      background:var(--accent-700);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER (same layout across site) ===== -->
+  <header>
+    <div class="page-container">
+      <h1>Snazzy Paws Grooming</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html" aria-current="page">Booking</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container" id="content">
+    <h2 class="mt-3">Book an appointment</h2>
+    <p class="help">Fill this in and we’ll get back to you to confirm the time.</p>
+
+    <!-- Simple booking form (no backend functionality) -->
+    <form action="#" method="post">
+      <label for="name">Your name</label>
+      <input id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" required>
+
+      <label for="dog">Dog’s name &amp; breed</label>
+      <input id="dog" name="dog" placeholder="e.g., Bella – Cavoodle">
+
+      <label for="service">Service</label>
+      <select id="service" name="service" required>
+        <option value="">Select a service…</option>
+        <option>Bath &amp; blow dry</option>
+        <option>Full groom</option>
+        <option>Nail trim</option>
+        <option>De-shedding (add-on)</option>
+      </select>
+
+      <label for="date">Preferred date</label>
+      <input id="date" name="date" type="date" required>
+
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know? (coat condition, anxiety, etc.)"></textarea>
+
+      <p style="margin-top:1rem;">
+        <button class="btn-submit" type="submit">Request booking</button>
+      </p>
+    </form>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-brown text-light py-3 mt-4">
+    <div class="container text-center small">
+      <p class="mb-1">&copy; 2025 Snazzy Paws Grooming • Hamilton, New Zealand</p>
+      <p class="mb-0">
+        <a href="privacy.html" class="link-light text-decoration-underline">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

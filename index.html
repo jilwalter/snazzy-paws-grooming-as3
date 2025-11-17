@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Required for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- NEW: description meta tag -->
+  <meta name="description" content="Snazzy Paws Grooming in Hamilton offers friendly, professional dog grooming services with easy online booking.">
+
+  <title>Snazzy Paws Grooming • Home</title>
+
+  <!-- NEW: Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Existing stylesheet from Assessment 2 -->
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+
+  <!-- 
+    File: index.html 
+    Project: Snazzy Paws Grooming
+    Student: Jil Walter
+    Student ID: 5133764
+    Assessment: BIT607 Web Development - Assessment 2
+    Description: Home page for Snazzy Paws Grooming.
+    Header updated to match all site pages for consistent layout.
+  -->
+
+  <style>
+    /* ===== Warm theme used across all pages ===== */
+    :root{
+      --accent:#c49b66;      /* main tan colour for buttons and accents */
+      --accent-700:#8b6b3f;  /* darker shade for hover states */
+      --bg-cream:#faf8f4;    /* soft cream background */
+      --panel:#f5eee3;       /* light beige panel background */
+      --ink:#3a3024;         /* dark brown text colour */
+      --muted:#5c4e3c;       /* softer text colour for paragraphs */
+      --line:#e6dfd2;        /* light border colour */
+    }
+
+    body{
+      color:var(--ink);
+      background:var(--bg-cream);
+      font-family:Arial, sans-serif;
+      margin:0;
+      padding:0;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1rem;
+    }
+
+    /* ===== SITE HEADER (same on every page) ===== */
+    header{
+      width:100%;
+      background:linear-gradient(90deg,#8b6b3f 0%, #c49b66 100%);
+      color:#fff;
+      border-bottom:3px solid #8b6b3f;
+      box-shadow:0 2px 6px rgba(0,0,0,.1);
+    }
+
+    /* Flex layout for consistent horizontal alignment */
+    header .container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:1rem 0;
+    }
+
+    header h1{
+      margin:0;
+      color:#fff;
+      font-size:1.6rem;
+      letter-spacing:.5px;
+    }
+
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      padding:.45rem .7rem;
+      border-radius:.4rem;
+      font-weight:500;
+    }
+
+    nav a:hover,
+    nav a:focus-visible{
+      background:rgba(255,255,255,.2);
+    }
+
+    nav a[aria-current="page"]{
+      background:rgba(255,255,255,.25);
+      font-weight:700;
+      border-bottom:2px solid #fff;
+    }
+
+    /* ===== Home page layout styles ===== */
+    .split{display:grid;gap:1.25rem;align-items:center}
+    @media(min-width:900px){.split{grid-template-columns:1.05fr .95fr}}
+
+    /* welcome-section box with warm tint */
+    .welcome-section{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:1.5rem 1.25rem;
+      position:relative;
+      box-shadow:0 0 0 1px var(--line);
+    }
+
+    /* left colour bar on the welcome section */
+    .welcome-section::before{
+      content:"";
+      position:absolute;
+      left:-1px; top:12px; bottom:12px;
+      width:6px;
+      border-radius:6px;
+      background:var(--accent);
+    }
+
+    .lead{font-size:1.05rem; line-height:1.6; color:var(--muted)}
+    .feature-img{width:100%; height:auto; border-radius:12px; display:block}
+
+    /* links and buttons */
+    .link-list{margin:.65rem 0 0 1.15rem; line-height:1.55}
+    .link-list a{color:var(--accent-700); text-decoration:underline}
+    .link-list a:hover,.link-list a:focus-visible{color:var(--accent)}
+    .btn{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      text-decoration:none;
+      padding:.7rem 1rem;
+      border-radius:.7rem;
+      font-weight:700;
+    }
+    .btn:hover,.btn:focus-visible{background:var(--accent-700)}
+
+    /* simple 3-card service preview */
+    .services{margin:1.5rem 0}
+    .services-grid{display:grid; gap:1rem}
+    @media(min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:1rem;
+      display:flex;
+      gap:.75rem;
+      align-items:flex-start;
+      text-decoration:none;
+      color:inherit;
+    }
+    .card .emoji{font-size:1.4rem; line-height:1}
+    .card h3{margin:.1rem 0 .35rem; font-size:1.05rem; color:var(--ink)}
+    .card p{margin:0; color:var(--muted)}
+
+    /* small info strip used for hours section */
+    .strip{
+      background:#f6f0e6;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:1rem;
+      text-align:center;
+      margin:1.25rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER (identical across site) ===== -->
+  <header>
+    <div class="container">
+      <h1>Snazzy Paws Grooming</h1>
+      <nav>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container" id="content">
+    
+    <!-- welcome section with text on one side and image on the other -->
+    <section class="split" aria-labelledby="welcome-heading" style="margin:1.25rem 0 2rem;">
+      <div class="welcome-section">
+        <h2 id="welcome-heading">Welcome</h2>
+        <p class="lead">Gentle, friendly grooming for every dog, every time.</p>
+
+        <p class="lead">
+          Welcome to Snazzy Paws Grooming, your local dog salon in Hamilton.
+          We offer gentle, professional grooming for dogs of all sizes and coat types.
+          Every appointment is calm and caring, so your pet leaves happy, clean and looking their best.
+        </p>
+
+        <p>
+          We keep our salon quiet and comfortable. Whether your dog needs a quick bath or a full breed-style groom,
+          we make sure they’re relaxed and well cared for from start to finish.
+        </p>
+
+        <!-- quick links to other pages -->
+        <ul class="link-list">
+          <li><a href="services.html">See our services and prices</a></li>
+          <li><a href="gallery.html">Browse our 4×4 image gallery</a></li>
+          <li><a href="contact.html">Find our contact details</a></li>
+        </ul>
+        <p style="margin-top:.9rem;"><a class="btn" href="booking.html">Book an appointment</a></p>
+      </div>
+
+      <!-- photo sits beside the welcome text -->
+      <div>
+        <img class="feature-img" src="assets/img/longcoat-groom.jpg" alt="Long-coated dog freshly groomed at Snazzy Paws Grooming">
+      </div>
+    </section>
+
+    <!-- small section that highlights 3 main services -->
+    <section class="services" aria-labelledby="services-glance">
+      <h2 id="services-glance">Popular services</h2>
+      <div class="services-grid">
+        <a class="card" href="services.html">
+          <span class="emoji" aria-hidden="true">🛁</span>
+          <div><h3>Bath &amp; blow dry</h3><p>Warm bath, gentle shampoo and a full dry for a soft, clean coat.</p></div>
+        </a>
+        <a class="card" href="services.html">
+          <span class="emoji" aria-hidden="true">✂️</span>
+          <div><h3>Full groom</h3><p>Clip or scissor style to suit your dog’s breed and lifestyle.</p></div>
+        </a>
+        <a class="card" href="services.html">
+          <span class="emoji" aria-hidden="true">🐾</span>
+          <div><h3>Nail trim</h3><p>Quick, low-stress trims to keep paws healthy and comfortable.</p></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- hours of operation -->
+    <aside class="strip" role="note" aria-label="Opening hours">
+      <strong>Open Mon–Sat, 9am–5pm</strong> • Hamilton, New Zealand
+    </aside>
+
+    <!-- call to action section at the bottom -->
+    <section aria-labelledby="cta-heading" style="margin:1rem 0 2rem;">
+      <h2 id="cta-heading">Ready to book?</h2>
+      <p class="lead" style="margin:.25rem 0 .75rem">
+        Book a time that suits you. Tell us your dog’s breed and what they need, and we’ll take care of the rest.
+      </p>
+      <p><a class="btn" href="booking.html">Book now</a></p>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-brown text-light py-3 mt-4">
+  <div class="container text-center small">
+    <p class="mb-1">&copy; 2025 Snazzy Paws Grooming • Hamilton, New Zealand</p>
+    <p class="mb-0">
+      <a href="privacy.html" class="link-light text-decoration-underline">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
