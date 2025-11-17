@@ -1,0 +1,65 @@
+/* 
+  File: styles.min.css
+  Project: Snazzy Paws Grooming
+  Student Name: Jil Walter
+  Student ID: 5133764
+  Assessment: BIT607 Web Development - Assessment 2 / 3
+  Description: Basic site-wide styles (fonts, colours and layout defaults).
+  Note: Main custom page styles are written inside each HTML file.
+*/
+
+/* main colour variables used across the site (legacy palette) */
+:root{
+  --primary:#0B6E4F;  /* old default green, kept for base nav links */
+  --accent:#FF6B35;   /* accent orange, used in headings */
+  --text:#222;        /* main text colour */
+  --bg:#fff;          /* page background */
+}
+
+/* basic body setup */
+body{
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  padding:0;
+}
+
+/* default link/nav look (overridden by page-specific header styles) */
+nav a{
+  margin:0 .5rem;
+  color:var(--primary);
+  text-decoration:none;
+}
+
+/* underline on hover for clarity */
+a:hover{
+  text-decoration:underline;
+}
+
+/* heading accent colour */
+h1{
+  color:var(--accent);
+}
+
+/* visible focus outline for accessibility */
+:focus-visible{
+  outline:3px solid #000;
+  outline-offset:3px;
+}
+
+/* ===== AS3 helper classes for Bootstrap-based layout ===== */
+
+/* brand background helpers used on body/footer etc. */
+.bg-brown{
+  background-color:#8b6b3f !important;
+}
+
+.bg-cream{
+  background-color:#faf8f4 !important;
+}
+
+/* brand text colour helper */
+.text-brown{
+  color:#3a3024 !important;
+}
